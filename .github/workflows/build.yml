@@ -1,0 +1,30 @@
+name: Build project
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+          cache: "npm"
+          registry-url: "https://npm.pkg.github.com"
+      - run: npm i
+      - run: npm build
+      - run: |
+          cp package.json dist/
+          cp package-lock.json dist/
+      - name: Deploy
+        uses: s0/git-publish-subdir-action@v2.6.0
+        env:
+          REPO: self
+          BRANCH: build
+          FOLDER: dist
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
