@@ -17,7 +17,7 @@ jobs:
           cache: "npm"
           registry-url: "https://npm.pkg.github.com"
       - run: npm i
-      - run: npm build
+      - run: npm run build
       - run: |
           cp package.json dist/
           cp package-lock.json dist/
