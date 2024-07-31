@@ -1,0 +1,16 @@
+
+/node_modules
+/dist
+/dist-es
+/results
+/resources
+/coverage
+/coverage-remapped
+/test.js
+/test/abr-read/ignore-*
+/test/read/ignore-*
+/test/read-write/ignore-*
+.vscode
+TODO
+.idea
+.tool-versions

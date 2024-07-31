@@ -1,0 +1,17 @@
+
+/node_modules
+/dist/test
+/dist-es/test
+/results
+/resources
+/src/test
+/typings
+/coverage
+/coverage-remapped
+/test
+/files
+.gitignore
+.travis.yml
+/.vscode
+/tslint.json
+/gulpfile.js
